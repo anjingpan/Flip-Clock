@@ -12,25 +12,30 @@ class ViewController: UIViewController {
 
     // MARK: - Property
     fileprivate var label: FlipLabel!
+    var count = 20 {
+        didSet {
+            label.text = "\(count)"
+        }
+    }
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         label = FlipLabel()
-        label.frame = CGRect(x: 0, y: 0, width: 60, height: 40)
+        label.frame = CGRect(x: 0, y: 0, width: 100, height: 60)
         label.center = view.center
-        label.text = "21"
-        label.font = UIFont.systemFont(ofSize: 28)
+        label.text = "20"
+        label.font = UIFont.systemFont(ofSize: 40)
         label.textColor = .white
         label.backgroundColor = .green
         label.textAlignment = .center
-        label.animationDuration = 10
+        label.isUserInteractionEnabled = true
         view.addSubview(label)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        label.text = "22"
+        count += 1
     }
 }
 
