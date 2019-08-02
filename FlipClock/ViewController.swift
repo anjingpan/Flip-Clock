@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Screen Always Display
+        UIApplication.shared.isIdleTimerDisabled = true
+        
         initView()
     }
     
@@ -34,25 +37,57 @@ class ViewController: UIViewController {
         startTimer()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        timer?.invalidate()
+        timer = nil
+        
+        hourLabel.text = nil
+        minuteLabel.text = nil
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
+        
+        //Will Transition Bounds height and width is still same as before
+        updateLabelCenter(screenWidth: UIScreen.main.bounds.height, screenHeight: UIScreen.main.bounds.width, isWillTransition: true)
+    }
+    
     // MARK: - UI
     func initView() {
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 1 / 255, alpha: 1)
+        view.backgroundColor = UIColor(r: 0, g: 0, b: 1)
         
-        hourLabel = initFlipLabel({ (label) in
-            label.center = CGPoint(x: UIScreen.main.bounds.width * 0.5, y: 62 + label.bounds.height * 0.5)
-        })
+        hourLabel = initFlipLabel{ (label) in
+        }
         
         minuteLabel = initFlipLabel { (label) in
-            label.center = CGPoint(x: UIScreen.main.bounds.width * 0.5, y: 78 + label.bounds.height * 1.5)
         }
+        
+        updateLabelCenter(screenWidth: UIScreen.main.bounds.width, screenHeight: UIScreen.main.bounds.height)
+    }
+    
+    //Update Label Center
+    func updateLabelCenter(screenWidth: CGFloat, screenHeight: CGFloat, isWillTransition: Bool = false) {
+        let orient = UIApplication.shared.statusBarOrientation
+        
+        if (orient.isPortrait && !isWillTransition) || (orient.isLandscape && isWillTransition) {
+            hourLabel.center = CGPoint(x: screenWidth * 0.5, y: 62 + hourLabel.bounds.height * 0.5)
+            minuteLabel.center = CGPoint(x: screenWidth * 0.5, y: 78 + minuteLabel.bounds.height * 1.5)
+        } else {
+            hourLabel.center = CGPoint(x: 62 + hourLabel.bounds.width * 0.5, y: screenHeight * 0.5)
+            minuteLabel.center = CGPoint(x: 78 + hourLabel.bounds.width * 1.5, y: screenHeight * 0.5)
+        }
+        
     }
     
     func initFlipLabel(_ configuration: (_ label: FlipLabel) -> Void) -> FlipLabel {
         let label = FlipLabel()
-        label.textColor = UIColor(red: 183 / 255, green: 184 / 255, blue: 185 / 255, alpha: 1)
-        label.backgroundColor = UIColor(red: 24 / 255, green: 25 / 255, blue: 26 / 255, alpha: 1)
+        label.textColor = UIColor(r: 183, g: 184, b: 185)
+        label.backgroundColor = UIColor(r: 24, g: 25, b: 26)
         label.font = UIFont.boldSystemFont(ofSize: 120)
-        label.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 2 * 58, height: UIScreen.main.bounds.width - 2 * 58)
+        let width: CGFloat = UIApplication.shared.statusBarOrientation.isPortrait ? UIScreen.main.bounds.width : UIScreen.main.bounds.height
+        label.frame = CGRect(x: 0, y: 0, width: width - 2 * 58, height: width - 2 * 58)
         label.layer.cornerRadius = 20
         label.layer.masksToBounds = true
         label.textAlignment = .center

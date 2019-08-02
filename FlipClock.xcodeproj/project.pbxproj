@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		792CB57D22F4236A00516411 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CB57C22F4236A00516411 /* ExtensionUIColor.swift */; };
 		95F00A8222E73F7300F8F8F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F00A8122E73F7300F8F8F1 /* AppDelegate.swift */; };
 		95F00A8422E73F7300F8F8F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F00A8322E73F7300F8F8F1 /* ViewController.swift */; };
 		95F00A8722E73F7300F8F8F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F00A8522E73F7300F8F8F1 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		792CB57C22F4236A00516411 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		95F00A7E22E73F7300F8F8F1 /* FlipClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F00A8122E73F7300F8F8F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95F00A8322E73F7300F8F8F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		792CB57B22F4216A00516411 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				792CB57C22F4236A00516411 /* ExtensionUIColor.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		95F00A7522E73F7300F8F8F1 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 		95F00A8022E73F7300F8F8F1 /* FlipClock */ = {
 			isa = PBXGroup;
 			children = (
+				792CB57B22F4216A00516411 /* Extension */,
 				95F00A8122E73F7300F8F8F1 /* AppDelegate.swift */,
 				95F00A8322E73F7300F8F8F1 /* ViewController.swift */,
 				95F00AAF22E73F9900F8F8F1 /* FlipLabel.swift */,
@@ -262,6 +273,7 @@
 				95F00A8422E73F7300F8F8F1 /* ViewController.swift in Sources */,
 				95F00AB022E73F9900F8F8F1 /* FlipLabel.swift in Sources */,
 				95F00A8222E73F7300F8F8F1 /* AppDelegate.swift in Sources */,
+				792CB57D22F4236A00516411 /* ExtensionUIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
