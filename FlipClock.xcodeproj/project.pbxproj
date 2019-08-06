@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		792CB57D22F4236A00516411 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CB57C22F4236A00516411 /* ExtensionUIColor.swift */; };
+		79CCC35022F7D9BF00FE8E26 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CCC34F22F7D9BF00FE8E26 /* NotificationCenter.framework */; };
+		79CCC35322F7D9BF00FE8E26 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCC35222F7D9BF00FE8E26 /* TodayViewController.swift */; };
+		79CCC35622F7D9BF00FE8E26 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CCC35422F7D9BF00FE8E26 /* MainInterface.storyboard */; };
+		79CCC35A22F7D9BF00FE8E26 /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 79CCC34D22F7D9BF00FE8E26 /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		79F4B5A422F8058000F585A1 /* FlipLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F00AAF22E73F9900F8F8F1 /* FlipLabel.swift */; };
+		79F4B5A522F805C000F585A1 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CB57C22F4236A00516411 /* ExtensionUIColor.swift */; };
 		95F00A8222E73F7300F8F8F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F00A8122E73F7300F8F8F1 /* AppDelegate.swift */; };
 		95F00A8422E73F7300F8F8F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F00A8322E73F7300F8F8F1 /* ViewController.swift */; };
 		95F00A8722E73F7300F8F8F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F00A8522E73F7300F8F8F1 /* Main.storyboard */; };
@@ -19,6 +25,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		79CCC35822F7D9BF00FE8E26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95F00A7622E73F7300F8F8F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79CCC34C22F7D9BF00FE8E26;
+			remoteInfo = TodayExtension;
+		};
 		95F00A9322E73F7500F8F8F1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 95F00A7622E73F7300F8F8F1 /* Project object */;
@@ -35,8 +48,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		79CCC35E22F7D9BF00FE8E26 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				79CCC35A22F7D9BF00FE8E26 /* TodayExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		792CB57C22F4236A00516411 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
+		79CCC34D22F7D9BF00FE8E26 /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		79CCC34F22F7D9BF00FE8E26 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		79CCC35222F7D9BF00FE8E26 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		79CCC35522F7D9BF00FE8E26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		79CCC35722F7D9BF00FE8E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F00A7E22E73F7300F8F8F1 /* FlipClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F00A8122E73F7300F8F8F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95F00A8322E73F7300F8F8F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +86,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		79CCC34A22F7D9BF00FE8E26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79CCC35022F7D9BF00FE8E26 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95F00A7B22E73F7300F8F8F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,12 +126,32 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
+		79CCC34E22F7D9BF00FE8E26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79CCC34F22F7D9BF00FE8E26 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		79CCC35122F7D9BF00FE8E26 /* TodayExtension */ = {
+			isa = PBXGroup;
+			children = (
+				79CCC35222F7D9BF00FE8E26 /* TodayViewController.swift */,
+				79CCC35422F7D9BF00FE8E26 /* MainInterface.storyboard */,
+				79CCC35722F7D9BF00FE8E26 /* Info.plist */,
+			);
+			path = TodayExtension;
+			sourceTree = "<group>";
+		};
 		95F00A7522E73F7300F8F8F1 = {
 			isa = PBXGroup;
 			children = (
 				95F00A8022E73F7300F8F8F1 /* FlipClock */,
 				95F00A9522E73F7500F8F8F1 /* FlipClockTests */,
 				95F00AA022E73F7500F8F8F1 /* FlipClockUITests */,
+				79CCC35122F7D9BF00FE8E26 /* TodayExtension */,
+				79CCC34E22F7D9BF00FE8E26 /* Frameworks */,
 				95F00A7F22E73F7300F8F8F1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,6 +162,7 @@
 				95F00A7E22E73F7300F8F8F1 /* FlipClock.app */,
 				95F00A9222E73F7500F8F8F1 /* FlipClockTests.xctest */,
 				95F00A9D22E73F7500F8F8F1 /* FlipClockUITests.xctest */,
+				79CCC34D22F7D9BF00FE8E26 /* TodayExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,6 +203,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		79CCC34C22F7D9BF00FE8E26 /* TodayExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79CCC35D22F7D9BF00FE8E26 /* Build configuration list for PBXNativeTarget "TodayExtension" */;
+			buildPhases = (
+				79CCC34922F7D9BF00FE8E26 /* Sources */,
+				79CCC34A22F7D9BF00FE8E26 /* Frameworks */,
+				79CCC34B22F7D9BF00FE8E26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayExtension;
+			productName = TodayExtension;
+			productReference = 79CCC34D22F7D9BF00FE8E26 /* TodayExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		95F00A7D22E73F7300F8F8F1 /* FlipClock */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95F00AA622E73F7500F8F8F1 /* Build configuration list for PBXNativeTarget "FlipClock" */;
@@ -149,10 +227,12 @@
 				95F00A7A22E73F7300F8F8F1 /* Sources */,
 				95F00A7B22E73F7300F8F8F1 /* Frameworks */,
 				95F00A7C22E73F7300F8F8F1 /* Resources */,
+				79CCC35E22F7D9BF00FE8E26 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				79CCC35922F7D9BF00FE8E26 /* PBXTargetDependency */,
 			);
 			name = FlipClock;
 			productName = FlipClock;
@@ -201,10 +281,13 @@
 		95F00A7622E73F7300F8F8F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = anjing;
 				TargetAttributes = {
+					79CCC34C22F7D9BF00FE8E26 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 					95F00A7D22E73F7300F8F8F1 = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -234,11 +317,20 @@
 				95F00A7D22E73F7300F8F8F1 /* FlipClock */,
 				95F00A9122E73F7500F8F8F1 /* FlipClockTests */,
 				95F00A9C22E73F7500F8F8F1 /* FlipClockUITests */,
+				79CCC34C22F7D9BF00FE8E26 /* TodayExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		79CCC34B22F7D9BF00FE8E26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79CCC35622F7D9BF00FE8E26 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95F00A7C22E73F7300F8F8F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,6 +358,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		79CCC34922F7D9BF00FE8E26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79CCC35322F7D9BF00FE8E26 /* TodayViewController.swift in Sources */,
+				79F4B5A522F805C000F585A1 /* ExtensionUIColor.swift in Sources */,
+				79F4B5A422F8058000F585A1 /* FlipLabel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95F00A7A22E73F7300F8F8F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -296,6 +398,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		79CCC35922F7D9BF00FE8E26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79CCC34C22F7D9BF00FE8E26 /* TodayExtension */;
+			targetProxy = 79CCC35822F7D9BF00FE8E26 /* PBXContainerItemProxy */;
+		};
 		95F00A9422E73F7500F8F8F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 95F00A7D22E73F7300F8F8F1 /* FlipClock */;
@@ -309,6 +416,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		79CCC35422F7D9BF00FE8E26 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79CCC35522F7D9BF00FE8E26 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		95F00A8522E73F7300F8F8F1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -328,6 +443,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		79CCC35B22F7D9BF00FE8E26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJ2292U93V;
+				INFOPLIST_FILE = TodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anjing.FlipClock.TodayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		79CCC35C22F7D9BF00FE8E26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HJ2292U93V;
+				INFOPLIST_FILE = TodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anjing.FlipClock.TodayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		95F00AA422E73F7500F8F8F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -447,6 +602,7 @@
 		95F00AA722E73F7500F8F8F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HJ2292U93V;
@@ -466,6 +622,7 @@
 		95F00AA822E73F7500F8F8F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HJ2292U93V;
@@ -567,6 +724,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		79CCC35D22F7D9BF00FE8E26 /* Build configuration list for PBXNativeTarget "TodayExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79CCC35B22F7D9BF00FE8E26 /* Debug */,
+				79CCC35C22F7D9BF00FE8E26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		95F00A7922E73F7300F8F8F1 /* Build configuration list for PBXProject "FlipClock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
