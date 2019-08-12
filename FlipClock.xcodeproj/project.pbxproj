@@ -22,6 +22,7 @@
 		95F00A9722E73F7500F8F8F1 /* FlipClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F00A9622E73F7500F8F8F1 /* FlipClockTests.swift */; };
 		95F00AA222E73F7500F8F8F1 /* FlipClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F00AA122E73F7500F8F8F1 /* FlipClockUITests.swift */; };
 		95F00AB022E73F9900F8F8F1 /* FlipLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F00AAF22E73F9900F8F8F1 /* FlipLabel.swift */; };
+		95FC825C22F9D142008B1E10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F00A8822E73F7500F8F8F1 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -327,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95FC825C22F9D142008B1E10 /* Assets.xcassets in Resources */,
 				79CCC35622F7D9BF00FE8E26 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

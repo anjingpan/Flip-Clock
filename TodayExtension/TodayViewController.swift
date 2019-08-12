@@ -17,6 +17,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     // MARK: - Property
     fileprivate var hourLabel: FlipLabel!
     fileprivate var minuteLabel: FlipLabel!
+    fileprivate var hourDividingView: UIView!
+    fileprivate var minuteDividingView: UIView!
     
     fileprivate var timer: Timer?
     
@@ -35,6 +37,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         startTimer()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let url = URL(string: "FlipClock://") else { return }
+        self.extensionContext?.open(url, completionHandler: nil)
+    }
+    
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         preferredContentSize = activeDisplayMode == .compact ? CGSize(width: view.bounds.width, height: kNormalHeight) : CGSize(width: view.bounds.width, height: kExpandHeight)
         
@@ -50,11 +64,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func initView() {
         view.backgroundColor = UIColor(r: 0, g: 0, b: 1)
         
-        hourLabel = initFlipLabel{ (label) in
-        }
+        hourLabel = initFlipLabel()
+        hourDividingView = initCenterDividingView(for: hourLabel)
         
-        minuteLabel = initFlipLabel { (label) in
-        }
+        minuteLabel = initFlipLabel()
+        minuteDividingView = initCenterDividingView(for: minuteLabel)
         
         updateLabel()
     }
@@ -68,6 +82,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             label?.layer.cornerRadius = preferredContentSize.height == kNormalHeight ? 10 : 20
         }
         
+        [hourDividingView, minuteDividingView].forEach { (dividingView) in
+            dividingView?.frame = CGRect(x: 0, y: 0, width: hourLabel.bounds.width, height: preferredContentSize.height == kNormalHeight ? 2 : 4)
+            guard let center = dividingView?.superview?.center else { return }
+            dividingView?.center = center
+        }
+        
         hourLabel.center = CGPoint(x: UIScreen.main.bounds.width * 0.5 - hourLabel.bounds.width * 0.5 - 8, y: preferredContentSize.height * 0.5)
         minuteLabel.center = CGPoint(x: UIScreen.main.bounds.width * 0.5 + minuteLabel.bounds.width * 0.5 + 8, y: preferredContentSize.height * 0.5)
     }
@@ -76,7 +96,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
     }
     
-    func initFlipLabel(_ configuration: (_ label: FlipLabel) -> Void) -> FlipLabel {
+    func initFlipLabel() -> FlipLabel {
         let label = FlipLabel()
         label.textColor = UIColor(r: 183, g: 184, b: 185)
         label.backgroundColor = UIColor(r: 24, g: 25, b: 26)
@@ -84,14 +104,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         label.textAlignment = .center
         label.animationDuration = 1.5
         view.addSubview(label)
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: label.bounds.width, height: 4))
-        view.center = label.center
+
+        return label
+    }
+    
+    func initCenterDividingView(for label: FlipLabel) -> UIView {
+        let view = UIView()
         view.backgroundColor = self.view.backgroundColor
         label.addSubview(view)
-        
-        configuration(label)
-        return label
+        return view
     }
     
     @objc func updateDate() {
