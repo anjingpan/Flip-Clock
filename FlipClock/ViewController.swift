@@ -54,6 +54,10 @@ class ViewController: UIViewController {
         updateLabelCenter(screenWidth: UIScreen.main.bounds.height, screenHeight: UIScreen.main.bounds.width, isWillTransition: true)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        SkinManager.shareInstance.skinType = SkinManager.shareInstance.skinType == .night ? .light : .night
+    }
+    
     // MARK: - UI
     func initView() {
         view.backgroundColor = UIColor(r: 0, g: 0, b: 1)

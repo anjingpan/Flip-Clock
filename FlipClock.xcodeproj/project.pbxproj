@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7910D9F52303E7FC001BFCE4 /* NSObject+Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910D9F42303E7FC001BFCE4 /* NSObject+Skin.swift */; };
+		7910D9F7230402AB001BFCE4 /* SkinConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910D9F6230402AB001BFCE4 /* SkinConstant.swift */; };
 		792CB57D22F4236A00516411 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CB57C22F4236A00516411 /* ExtensionUIColor.swift */; };
+		7983AEBD23029D4E006B5190 /* Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983AEBB23029D4E006B5190 /* Swizzle.swift */; };
+		7983AEBE23029D4E006B5190 /* UILabel+Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983AEBC23029D4E006B5190 /* UILabel+Skin.swift */; };
+		7983AEC02302D210006B5190 /* SkinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983AEBF2302D210006B5190 /* SkinManager.swift */; };
+		798FEAFB2304FF710009CFD2 /* SkinLightConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 798FEAF92304FF700009CFD2 /* SkinLightConfig.json */; };
+		798FEAFC2304FF710009CFD2 /* SkinNightConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 798FEAFA2304FF710009CFD2 /* SkinNightConfig.json */; };
+		798FEAFF230541150009CFD2 /* UIView+Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798FEAFE230541150009CFD2 /* UIView+Skin.swift */; };
 		79CCC35022F7D9BF00FE8E26 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CCC34F22F7D9BF00FE8E26 /* NotificationCenter.framework */; };
 		79CCC35322F7D9BF00FE8E26 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCC35222F7D9BF00FE8E26 /* TodayViewController.swift */; };
 		79CCC35622F7D9BF00FE8E26 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CCC35422F7D9BF00FE8E26 /* MainInterface.storyboard */; };
@@ -64,7 +72,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7910D9F42303E7FC001BFCE4 /* NSObject+Skin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Skin.swift"; sourceTree = "<group>"; };
+		7910D9F6230402AB001BFCE4 /* SkinConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinConstant.swift; sourceTree = "<group>"; };
 		792CB57C22F4236A00516411 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
+		7983AEBB23029D4E006B5190 /* Swizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Swizzle.swift; path = FlipClock/Skin/Swizzle.swift; sourceTree = SOURCE_ROOT; };
+		7983AEBC23029D4E006B5190 /* UILabel+Skin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UILabel+Skin.swift"; path = "FlipClock/Skin/UILabel+Skin.swift"; sourceTree = SOURCE_ROOT; };
+		7983AEBF2302D210006B5190 /* SkinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinManager.swift; sourceTree = "<group>"; };
+		798FEAF92304FF700009CFD2 /* SkinLightConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SkinLightConfig.json; sourceTree = "<group>"; };
+		798FEAFA2304FF710009CFD2 /* SkinNightConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SkinNightConfig.json; sourceTree = "<group>"; };
+		798FEAFE230541150009CFD2 /* UIView+Skin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Skin.swift"; sourceTree = "<group>"; };
 		79CCC34D22F7D9BF00FE8E26 /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CCC34F22F7D9BF00FE8E26 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		79CCC35222F7D9BF00FE8E26 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -122,9 +138,33 @@
 		792CB57B22F4216A00516411 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				7983AEBA23029D3B006B5190 /* Skin */,
 				792CB57C22F4236A00516411 /* ExtensionUIColor.swift */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		7983AEBA23029D3B006B5190 /* Skin */ = {
+			isa = PBXGroup;
+			children = (
+				798FEAFD23053C0E0009CFD2 /* Source */,
+				7983AEBB23029D4E006B5190 /* Swizzle.swift */,
+				798FEAFE230541150009CFD2 /* UIView+Skin.swift */,
+				7983AEBC23029D4E006B5190 /* UILabel+Skin.swift */,
+				7910D9F42303E7FC001BFCE4 /* NSObject+Skin.swift */,
+				7983AEBF2302D210006B5190 /* SkinManager.swift */,
+				7910D9F6230402AB001BFCE4 /* SkinConstant.swift */,
+			);
+			path = Skin;
+			sourceTree = "<group>";
+		};
+		798FEAFD23053C0E0009CFD2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				798FEAFA2304FF710009CFD2 /* SkinNightConfig.json */,
+				798FEAF92304FF700009CFD2 /* SkinLightConfig.json */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		79CCC34E22F7D9BF00FE8E26 /* Frameworks */ = {
@@ -340,6 +380,8 @@
 				95F00A8C22E73F7500F8F8F1 /* LaunchScreen.storyboard in Resources */,
 				95F00A8922E73F7500F8F8F1 /* Assets.xcassets in Resources */,
 				95F00A8722E73F7300F8F8F1 /* Main.storyboard in Resources */,
+				798FEAFC2304FF710009CFD2 /* SkinNightConfig.json in Resources */,
+				798FEAFB2304FF710009CFD2 /* SkinLightConfig.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,9 +416,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7983AEC02302D210006B5190 /* SkinManager.swift in Sources */,
 				95F00A8422E73F7300F8F8F1 /* ViewController.swift in Sources */,
 				95F00AB022E73F9900F8F8F1 /* FlipLabel.swift in Sources */,
+				7910D9F7230402AB001BFCE4 /* SkinConstant.swift in Sources */,
+				7983AEBD23029D4E006B5190 /* Swizzle.swift in Sources */,
+				798FEAFF230541150009CFD2 /* UIView+Skin.swift in Sources */,
+				7983AEBE23029D4E006B5190 /* UILabel+Skin.swift in Sources */,
 				95F00A8222E73F7300F8F8F1 /* AppDelegate.swift in Sources */,
+				7910D9F52303E7FC001BFCE4 /* NSObject+Skin.swift in Sources */,
 				792CB57D22F4236A00516411 /* ExtensionUIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
