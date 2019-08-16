@@ -14,10 +14,12 @@ extension UILabel {
     }()
     
     @objc func AJ_setTextColor(_ color: UIColor) {
-        self.AJ_setTextColor(color)
-        
-        guard let textColor = SkinManager.shareInstance.color(with: kSkin_Label_TextColor) else { return }
-        skinPickers[kMethod_Label_TextColor] = textColor
+        if let textColor = SkinManager.shareInstance.color(with: kSkin_Label_TextColor) {
+            skinPickers[kMethod_Label_TextColor] = textColor
+            self.AJ_setTextColor(textColor)
+        }else {
+            self.AJ_setTextColor(color)
+        }
     }
     
      public static func labelSwizzle() {

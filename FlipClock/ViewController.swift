@@ -60,7 +60,7 @@ class ViewController: UIViewController {
     
     // MARK: - UI
     func initView() {
-        view.backgroundColor = UIColor(r: 0, g: 0, b: 1)
+        view.backgroundColor = SkinManager.shareInstance.color(with: kSkin_BackgroundColor)
         
         hourLabel = initFlipLabel{ (label) in
         }
@@ -87,8 +87,8 @@ class ViewController: UIViewController {
     
     func initFlipLabel(_ configuration: (_ label: FlipLabel) -> Void) -> FlipLabel {
         let label = FlipLabel()
-        label.textColor = UIColor(r: 183, g: 184, b: 185)
-        label.backgroundColor = UIColor(r: 24, g: 25, b: 26)
+        label.textColor = SkinManager.shareInstance.color(with: kSkin_Label_TextColor)
+        label.backgroundColor = SkinManager.shareInstance.color(with: kSkin_Label_BackgroundColor)
         label.font = UIFont.boldSystemFont(ofSize: 120)
         let width: CGFloat = UIApplication.shared.statusBarOrientation.isPortrait ? UIScreen.main.bounds.width : UIScreen.main.bounds.height
         label.frame = CGRect(x: 0, y: 0, width: width - 2 * 58, height: width - 2 * 58)

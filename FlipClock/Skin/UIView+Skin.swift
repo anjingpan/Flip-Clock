@@ -14,18 +14,20 @@ extension UIView {
     }()
     
     @objc func AJ_setBackgroundColor(_ color: UIColor) {
-        self.AJ_setBackgroundColor(color)
-        
         if let _ = self as? UILabel {
-            setPicker(with: kMethod_BackgroundColor, skinKey: kSkin_Label_BackgroundColor)
+            setPicker(with: kMethod_BackgroundColor, skinKey: kSkin_Label_BackgroundColor, originColor: color)
         }else {
-            setPicker(with: kMethod_BackgroundColor, skinKey: kSkin_BackgroundColor)
+            setPicker(with: kMethod_BackgroundColor, skinKey: kSkin_BackgroundColor, originColor: color)
         }
     }
     
-    func setPicker(with key: String, skinKey: String) {
-        guard let color = SkinManager.shareInstance.color(with: skinKey) else { return }
-        skinPickers[key] = color
+    func setPicker(with key: String, skinKey: String, originColor: UIColor) {
+        if let color = SkinManager.shareInstance.color(with: skinKey) {
+            skinPickers[key] = color
+            AJ_setBackgroundColor(color)
+        }else {
+            AJ_setBackgroundColor(originColor)
+        }
     }
     
     public static func swizzle() {
