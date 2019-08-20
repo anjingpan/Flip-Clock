@@ -9,10 +9,16 @@
 /* Begin PBXBuildFile section */
 		7910D9F52303E7FC001BFCE4 /* NSObject+Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910D9F42303E7FC001BFCE4 /* NSObject+Skin.swift */; };
 		7910D9F7230402AB001BFCE4 /* SkinConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910D9F6230402AB001BFCE4 /* SkinConstant.swift */; };
+		791EDBCD230BC9A500B1AFED /* ExtensionNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791EDBCC230BC9A500B1AFED /* ExtensionNotification.swift */; };
+		791EDBCF230BD74900B1AFED /* ExtensionUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791EDBCE230BD74900B1AFED /* ExtensionUserDefaults.swift */; };
 		792CB57D22F4236A00516411 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CB57C22F4236A00516411 /* ExtensionUIColor.swift */; };
 		7983AEBD23029D4E006B5190 /* Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983AEBB23029D4E006B5190 /* Swizzle.swift */; };
 		7983AEBE23029D4E006B5190 /* UILabel+Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983AEBC23029D4E006B5190 /* UILabel+Skin.swift */; };
 		7983AEC02302D210006B5190 /* SkinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983AEBF2302D210006B5190 /* SkinManager.swift */; };
+		7985A9CC2306ADCD00B72386 /* digital-7 (mono).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7985A9C82306ADCD00B72386 /* digital-7 (mono).ttf */; };
+		7985A9CD2306ADCD00B72386 /* digital-7 (mono italic).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7985A9C92306ADCD00B72386 /* digital-7 (mono italic).ttf */; };
+		7985A9CE2306ADCD00B72386 /* digital-7 (italic).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7985A9CA2306ADCD00B72386 /* digital-7 (italic).ttf */; };
+		7985A9CF2306ADCD00B72386 /* digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7985A9CB2306ADCD00B72386 /* digital-7.ttf */; };
 		798FEAFB2304FF710009CFD2 /* SkinLightConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 798FEAF92304FF700009CFD2 /* SkinLightConfig.json */; };
 		798FEAFC2304FF710009CFD2 /* SkinNightConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 798FEAFA2304FF710009CFD2 /* SkinNightConfig.json */; };
 		798FEAFF230541150009CFD2 /* UIView+Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798FEAFE230541150009CFD2 /* UIView+Skin.swift */; };
@@ -74,10 +80,16 @@
 /* Begin PBXFileReference section */
 		7910D9F42303E7FC001BFCE4 /* NSObject+Skin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Skin.swift"; sourceTree = "<group>"; };
 		7910D9F6230402AB001BFCE4 /* SkinConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinConstant.swift; sourceTree = "<group>"; };
+		791EDBCC230BC9A500B1AFED /* ExtensionNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNotification.swift; sourceTree = "<group>"; };
+		791EDBCE230BD74900B1AFED /* ExtensionUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUserDefaults.swift; sourceTree = "<group>"; };
 		792CB57C22F4236A00516411 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		7983AEBB23029D4E006B5190 /* Swizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Swizzle.swift; path = FlipClock/Skin/Swizzle.swift; sourceTree = SOURCE_ROOT; };
 		7983AEBC23029D4E006B5190 /* UILabel+Skin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UILabel+Skin.swift"; path = "FlipClock/Skin/UILabel+Skin.swift"; sourceTree = SOURCE_ROOT; };
 		7983AEBF2302D210006B5190 /* SkinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinManager.swift; sourceTree = "<group>"; };
+		7985A9C82306ADCD00B72386 /* digital-7 (mono).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7 (mono).ttf"; sourceTree = "<group>"; };
+		7985A9C92306ADCD00B72386 /* digital-7 (mono italic).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7 (mono italic).ttf"; sourceTree = "<group>"; };
+		7985A9CA2306ADCD00B72386 /* digital-7 (italic).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7 (italic).ttf"; sourceTree = "<group>"; };
+		7985A9CB2306ADCD00B72386 /* digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7.ttf"; sourceTree = "<group>"; };
 		798FEAF92304FF700009CFD2 /* SkinLightConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SkinLightConfig.json; sourceTree = "<group>"; };
 		798FEAFA2304FF710009CFD2 /* SkinNightConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SkinNightConfig.json; sourceTree = "<group>"; };
 		798FEAFE230541150009CFD2 /* UIView+Skin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Skin.swift"; sourceTree = "<group>"; };
@@ -140,6 +152,8 @@
 			children = (
 				7983AEBA23029D3B006B5190 /* Skin */,
 				792CB57C22F4236A00516411 /* ExtensionUIColor.swift */,
+				791EDBCC230BC9A500B1AFED /* ExtensionNotification.swift */,
+				791EDBCE230BD74900B1AFED /* ExtensionUserDefaults.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -156,6 +170,17 @@
 				7910D9F6230402AB001BFCE4 /* SkinConstant.swift */,
 			);
 			path = Skin;
+			sourceTree = "<group>";
+		};
+		7985A9C72306ADAC00B72386 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				7985A9CA2306ADCD00B72386 /* digital-7 (italic).ttf */,
+				7985A9C92306ADCD00B72386 /* digital-7 (mono italic).ttf */,
+				7985A9C82306ADCD00B72386 /* digital-7 (mono).ttf */,
+				7985A9CB2306ADCD00B72386 /* digital-7.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		798FEAFD23053C0E0009CFD2 /* Source */ = {
@@ -211,6 +236,7 @@
 		95F00A8022E73F7300F8F8F1 /* FlipClock */ = {
 			isa = PBXGroup;
 			children = (
+				7985A9C72306ADAC00B72386 /* Font */,
 				792CB57B22F4216A00516411 /* Extension */,
 				95F00A8122E73F7300F8F8F1 /* AppDelegate.swift */,
 				95F00A8322E73F7300F8F8F1 /* ViewController.swift */,
@@ -377,10 +403,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7985A9CC2306ADCD00B72386 /* digital-7 (mono).ttf in Resources */,
+				7985A9CF2306ADCD00B72386 /* digital-7.ttf in Resources */,
 				95F00A8C22E73F7500F8F8F1 /* LaunchScreen.storyboard in Resources */,
 				95F00A8922E73F7500F8F8F1 /* Assets.xcassets in Resources */,
+				7985A9CE2306ADCD00B72386 /* digital-7 (italic).ttf in Resources */,
 				95F00A8722E73F7300F8F8F1 /* Main.storyboard in Resources */,
 				798FEAFC2304FF710009CFD2 /* SkinNightConfig.json in Resources */,
+				7985A9CD2306ADCD00B72386 /* digital-7 (mono italic).ttf in Resources */,
 				798FEAFB2304FF710009CFD2 /* SkinLightConfig.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +448,7 @@
 			files = (
 				7983AEC02302D210006B5190 /* SkinManager.swift in Sources */,
 				95F00A8422E73F7300F8F8F1 /* ViewController.swift in Sources */,
+				791EDBCF230BD74900B1AFED /* ExtensionUserDefaults.swift in Sources */,
 				95F00AB022E73F9900F8F8F1 /* FlipLabel.swift in Sources */,
 				7910D9F7230402AB001BFCE4 /* SkinConstant.swift in Sources */,
 				7983AEBD23029D4E006B5190 /* Swizzle.swift in Sources */,
@@ -425,6 +456,7 @@
 				7983AEBE23029D4E006B5190 /* UILabel+Skin.swift in Sources */,
 				95F00A8222E73F7300F8F8F1 /* AppDelegate.swift in Sources */,
 				7910D9F52303E7FC001BFCE4 /* NSObject+Skin.swift in Sources */,
+				791EDBCD230BC9A500B1AFED /* ExtensionNotification.swift in Sources */,
 				792CB57D22F4236A00516411 /* ExtensionUIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

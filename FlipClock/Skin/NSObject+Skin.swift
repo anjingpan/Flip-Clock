@@ -29,7 +29,7 @@ extension NSObject {
             objc_setAssociatedObject(self, &kSkinPicker, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             if newValue.isEmpty == false {
                 NotificationCenter.default.removeObserver(self)
-                NotificationCenter.default.addObserver(self, selector: #selector(updateSkin), name: Notification.Name(rawValue: kNotification_Name_UpdateSkin), object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(updateSkin), name: .updateSkin, object: nil)
             }
         }
     }

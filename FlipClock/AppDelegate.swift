@@ -15,8 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        SkinManager.shareInstance.skinType = .night
+        
+        if let skinString = UserDefaults.key.skin.stringValue, let skin = SkinType(rawValue: skinString) {
+            SkinManager.shareInstance.skinType = skin
+        }else {
+            SkinManager.shareInstance.skinType = .night
+        }
         return true
     }
 

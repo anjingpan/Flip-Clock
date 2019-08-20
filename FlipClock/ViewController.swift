@@ -8,13 +8,20 @@
 
 import UIKit
 
+enum ClockStyle: String {
+    case flip
+    case digital
+}
+
 class ViewController: UIViewController {
     
     // MARK: - Property
-    fileprivate var hourLabel: FlipLabel!
-    fileprivate var minuteLabel: FlipLabel!
+    fileprivate var hourLabel: UILabel!
+    fileprivate var minuteLabel: UILabel!
     
     fileprivate var timer: Timer?
+    
+    fileprivate var style: ClockStyle = .digital
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -23,11 +30,11 @@ class ViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateStyle), name: .updateStyle, object: nil)
         
-        //Screen Always Display
-        UIApplication.shared.isIdleTimerDisabled = true
-        
+        setupData()
         initView()
+        addAction()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +54,10 @@ class ViewController: UIViewController {
         minuteLabel.text = nil
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransition(to: newCollection, with: coordinator)
         
@@ -54,18 +65,25 @@ class ViewController: UIViewController {
         updateLabelCenter(screenWidth: UIScreen.main.bounds.height, screenHeight: UIScreen.main.bounds.width, isWillTransition: true)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        SkinManager.shareInstance.skinType = SkinManager.shareInstance.skinType == .night ? .light : .night
+    // MARK: - Data
+    func setupData() {
+        view.backgroundColor = SkinManager.shareInstance.color(with: kSkin_BackgroundColor)
+        
+        if let styleString = UserDefaults.key.style.stringValue , let clockStyle = ClockStyle(rawValue: styleString) {
+            style = clockStyle
+        }
+        
+        //Screen Always Display
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
     // MARK: - UI
     func initView() {
-        view.backgroundColor = SkinManager.shareInstance.color(with: kSkin_BackgroundColor)
         
-        hourLabel = initFlipLabel{ (label) in
+        hourLabel = initFlipLabel{ (_) in
         }
         
-        minuteLabel = initFlipLabel { (label) in
+        minuteLabel = initFlipLabel{ (_) in
         }
         
         updateLabelCenter(screenWidth: UIScreen.main.bounds.width, screenHeight: UIScreen.main.bounds.height)
@@ -85,8 +103,8 @@ class ViewController: UIViewController {
         
     }
     
-    func initFlipLabel(_ configuration: (_ label: FlipLabel) -> Void) -> FlipLabel {
-        let label = FlipLabel()
+    func initFlipLabel(_ configuration: (_ label: UILabel) -> Void) -> UILabel {
+        let label = style == .flip ? FlipLabel() : UILabel()
         label.textColor = SkinManager.shareInstance.color(with: kSkin_Label_TextColor)
         label.backgroundColor = SkinManager.shareInstance.color(with: kSkin_Label_BackgroundColor)
         label.font = UIFont.boldSystemFont(ofSize: 120)
@@ -95,16 +113,50 @@ class ViewController: UIViewController {
         label.layer.cornerRadius = 20
         label.layer.masksToBounds = true
         label.textAlignment = .center
-        label.animationDuration = 1.5
         view.addSubview(label)
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: label.bounds.width, height: 4))
-        view.center = label.center
-        view.backgroundColor = self.view.backgroundColor
-        label.addSubview(view)
-        
         configuration(label)
+        
+        if style == .digital {
+            label.font = UIFont(name: "Digital-7", size: 140)
+        } else if style == .flip , let flipLabel = label as? FlipLabel {
+            flipLabel.animationDuration = 1.5
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: label.bounds.width, height: 4))
+            view.center = label.center
+            view.backgroundColor = self.view.backgroundColor
+            flipLabel.addSubview(view)
+            return flipLabel
+        }
         return label
+    }
+    
+    func addAction() {
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeView))
+        swipeGesture.direction = .right
+        view.addGestureRecognizer(swipeGesture)
+    }
+    
+    // MARK: - Touch
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        SkinManager.shareInstance.skinType = SkinManager.shareInstance.skinType == .night ? .light : .night
+        UserDefaults.key.skin.set(SkinManager.shareInstance.skinType.rawValue)
+    }
+    
+    // MARK: - Selector
+    @objc func updateStyle() {
+        // userDefault has style and style don't match current
+        guard let styleString = UserDefaults.key.style.stringValue , let clockStyle = ClockStyle(rawValue: styleString), style != clockStyle else { return }
+        style = clockStyle
+        [hourLabel, minuteLabel].forEach({ $0?.removeFromSuperview() })
+        
+        initView()
+        updateDate()
+    }
+    
+    @objc func swipeView() {
+        let temStyle: ClockStyle = style == .digital ? .flip : .digital
+        UserDefaults.key.style.set(temStyle.rawValue)
+        NotificationCenter.default.post(name: .updateStyle, object: nil)
+
     }
     
     @objc func updateDate() {

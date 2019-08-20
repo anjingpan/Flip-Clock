@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum SkinType {
+enum SkinType: String {
     case night
     case light
 }
@@ -23,7 +23,7 @@ class SkinManager: NSObject {
     open var skinType: SkinType = .night {
         didSet {
             getSkinConfig()
-            NotificationCenter.default.post(name: Notification.Name(kNotification_Name_UpdateSkin), object: nil)
+            NotificationCenter.default.post(name: .updateSkin, object: nil)
         }
     }
     

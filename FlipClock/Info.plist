@@ -35,6 +35,13 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>digital-7.ttf</string>
+		<string>digital-7 (mono).ttf</string>
+		<string>digital-7 (mono italic).ttf</string>
+		<string>digital-7 (italic).ttf</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
