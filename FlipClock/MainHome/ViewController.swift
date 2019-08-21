@@ -32,6 +32,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateStyle), name: .updateStyle, object: nil)
         
+        for font in UIFont.familyNames {
+            for name in UIFont.fontNames(forFamilyName: font) {
+                print(name)
+            }
+        }
+        
         setupData()
         initView()
         addAction()
@@ -107,7 +113,7 @@ class ViewController: UIViewController {
         let label = style == .flip ? FlipLabel() : UILabel()
         label.textColor = SkinManager.shareInstance.color(with: kSkin_Label_TextColor)
         label.backgroundColor = SkinManager.shareInstance.color(with: kSkin_Label_BackgroundColor)
-        label.font = UIFont.boldSystemFont(ofSize: 120)
+        label.font = UIFont.boldSystemFont(ofSize: 140)
         let width: CGFloat = UIApplication.shared.statusBarOrientation.isPortrait ? UIScreen.main.bounds.width : UIScreen.main.bounds.height
         label.frame = CGRect(x: 0, y: 0, width: width - 2 * 58, height: width - 2 * 58)
         label.layer.cornerRadius = 20
@@ -117,7 +123,7 @@ class ViewController: UIViewController {
         configuration(label)
         
         if style == .digital {
-            label.font = UIFont(name: "Digital-7", size: 140)
+            label.font = UIFont(name: "Digital-7Mono", size: 140)
         } else if style == .flip , let flipLabel = label as? FlipLabel {
             flipLabel.animationDuration = 1.5
             let view = UIView(frame: CGRect(x: 0, y: 0, width: label.bounds.width, height: 4))
@@ -130,15 +136,14 @@ class ViewController: UIViewController {
     }
     
     func addAction() {
-        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeView))
-        swipeGesture.direction = .right
-        view.addGestureRecognizer(swipeGesture)
-    }
-    
-    // MARK: - Touch
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        SkinManager.shareInstance.skinType = SkinManager.shareInstance.skinType == .night ? .light : .night
-        UserDefaults.key.skin.set(SkinManager.shareInstance.skinType.rawValue)
+        let directions: [UISwipeGestureRecognizer.Direction] = [.right, .left]
+        for direction in directions {
+            let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeView(_:)))
+            swipeGesture.direction = direction
+            view.addGestureRecognizer(swipeGesture)
+        }
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapView)))
     }
     
     // MARK: - Selector
@@ -152,11 +157,15 @@ class ViewController: UIViewController {
         updateDate()
     }
     
-    @objc func swipeView() {
+    @objc func swipeView(_ gesture: UISwipeGestureRecognizer) {
         let temStyle: ClockStyle = style == .digital ? .flip : .digital
         UserDefaults.key.style.set(temStyle.rawValue)
         NotificationCenter.default.post(name: .updateStyle, object: nil)
-
+    }
+    
+    @objc func tapView() {
+        SkinManager.shareInstance.skinType = SkinManager.shareInstance.skinType == .night ? .light : .night
+        UserDefaults.key.skin.set(SkinManager.shareInstance.skinType.rawValue)
     }
     
     @objc func updateDate() {

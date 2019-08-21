@@ -19,6 +19,7 @@
 		7985A9CD2306ADCD00B72386 /* digital-7 (mono italic).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7985A9C92306ADCD00B72386 /* digital-7 (mono italic).ttf */; };
 		7985A9CE2306ADCD00B72386 /* digital-7 (italic).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7985A9CA2306ADCD00B72386 /* digital-7 (italic).ttf */; };
 		7985A9CF2306ADCD00B72386 /* digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7985A9CB2306ADCD00B72386 /* digital-7.ttf */; };
+		798B11D4230D1A6E00AC97E3 /* FlipLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F00AAF22E73F9900F8F8F1 /* FlipLabel.swift */; };
 		798FEAFB2304FF710009CFD2 /* SkinLightConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 798FEAF92304FF700009CFD2 /* SkinLightConfig.json */; };
 		798FEAFC2304FF710009CFD2 /* SkinNightConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 798FEAFA2304FF710009CFD2 /* SkinNightConfig.json */; };
 		798FEAFF230541150009CFD2 /* UIView+Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798FEAFE230541150009CFD2 /* UIView+Skin.swift */; };
@@ -26,7 +27,6 @@
 		79CCC35322F7D9BF00FE8E26 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCC35222F7D9BF00FE8E26 /* TodayViewController.swift */; };
 		79CCC35622F7D9BF00FE8E26 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CCC35422F7D9BF00FE8E26 /* MainInterface.storyboard */; };
 		79CCC35A22F7D9BF00FE8E26 /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 79CCC34D22F7D9BF00FE8E26 /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		79F4B5A422F8058000F585A1 /* FlipLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F00AAF22E73F9900F8F8F1 /* FlipLabel.swift */; };
 		79F4B5A522F805C000F585A1 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CB57C22F4236A00516411 /* ExtensionUIColor.swift */; };
 		95F00A8222E73F7300F8F8F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F00A8122E73F7300F8F8F1 /* AppDelegate.swift */; };
 		95F00A8422E73F7300F8F8F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F00A8322E73F7300F8F8F1 /* ViewController.swift */; };
@@ -183,6 +183,15 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		798B11D3230D196D00AC97E3 /* MainHome */ = {
+			isa = PBXGroup;
+			children = (
+				95F00A8322E73F7300F8F8F1 /* ViewController.swift */,
+				95F00AAF22E73F9900F8F8F1 /* FlipLabel.swift */,
+			);
+			path = MainHome;
+			sourceTree = "<group>";
+		};
 		798FEAFD23053C0E0009CFD2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,11 +245,10 @@
 		95F00A8022E73F7300F8F8F1 /* FlipClock */ = {
 			isa = PBXGroup;
 			children = (
+				798B11D3230D196D00AC97E3 /* MainHome */,
 				7985A9C72306ADAC00B72386 /* Font */,
 				792CB57B22F4216A00516411 /* Extension */,
 				95F00A8122E73F7300F8F8F1 /* AppDelegate.swift */,
-				95F00A8322E73F7300F8F8F1 /* ViewController.swift */,
-				95F00AAF22E73F9900F8F8F1 /* FlipLabel.swift */,
 				95F00A8522E73F7300F8F8F1 /* Main.storyboard */,
 				95F00A8822E73F7500F8F8F1 /* Assets.xcassets */,
 				95F00A8A22E73F7500F8F8F1 /* LaunchScreen.storyboard */,
@@ -437,8 +445,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				79CCC35322F7D9BF00FE8E26 /* TodayViewController.swift in Sources */,
+				798B11D4230D1A6E00AC97E3 /* FlipLabel.swift in Sources */,
 				79F4B5A522F805C000F585A1 /* ExtensionUIColor.swift in Sources */,
-				79F4B5A422F8058000F585A1 /* FlipLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
