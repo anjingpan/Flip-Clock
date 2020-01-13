@@ -32,12 +32,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateStyle), name: .updateStyle, object: nil)
         
-        for font in UIFont.familyNames {
-            for name in UIFont.fontNames(forFamilyName: font) {
-                print(name)
-            }
-        }
-        
         setupData()
         initView()
         addAction()
